@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Login</title>
+	</h:head>
+	<h:body>
+		<div align = "center">
+		<h:form>
+		<p:panel header="Dados" style="width:500px">
+		<p:growl id="growt" sticky="true" showDetail="true" life="3000"/>
+		<h:panelGrid columns="2" cellpadding="5">
+		
+		<h:outputLabel value="Matrícula: "/>
+		<p:inputText value="#{usuarioBean.usuarioBusca.matricula}"/>
+		
+		<h:outputLabel value="Senha: "/>
+		<p:password value="#{usuarioBean.usuarioBusca.senha}"/>
+		
+		<p:commandButton action="#{usuarioBean.buscarUsuario}"
+		value="Login"
+		ajax="false" update="growl"/>
+		
+		</h:panelGrid>
+		</p:panel>
+		</h:form>
+		</div>
+	</h:body>
+</html>

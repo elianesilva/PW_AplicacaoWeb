@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Novo Aluno</title>
+</h:head>
+<h:body>
+
+	
+
+
+	<h:form>
+		<img src = "#{facesContext.externalContext.request.contextPath}/img/ifma.jpg.756x379_q85_box-04684346_crop.jpg"
+		height="150px" width="300px"/>
+
+		<p:menubar>
+
+
+			<p:submenu label="Cadastro" icon="ui-icon-pencil">
+
+				<p:menuitem value="Aluno" url="/novoAluno.xhtml" ajax="false" />
+			</p:submenu>
+			<f:facet name="options">
+				<p:outputLabel value="Usuário Logado: "></p:outputLabel>
+				<p:outputLabel value="#{inicioBean.usuarioLogado.nome}    "></p:outputLabel>
+				<p:commandButton action="#{inicioBean.Logout}" 
+				value="Logout" icon="ui-icon-extlink" ajax="false" />
+			</f:facet>
+		</p:menubar>
+	</h:form>
+	
+
+
+
+</h:body>
+</html>
