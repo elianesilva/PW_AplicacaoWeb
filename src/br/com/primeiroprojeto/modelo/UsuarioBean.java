@@ -17,6 +17,8 @@ import br.com.primeiroprojetopw.controlle.Usuario;
 @ManagedBean(name= "usuarioBean")
 public class UsuarioBean implements Serializable{
 	
+	
+	private static final long serialVersionUID = 1L;
 	UsuarioDao usuarioDao;
 	private Usuario usuarioBusca;
 	private Usuario usuario;

@@ -17,11 +17,16 @@
 
 		<p:menubar>
 
-
 			<p:submenu label="Cadastro" icon="ui-icon-pencil">
-
 				<p:menuitem value="Aluno" url="/novoAluno.xhtml" ajax="false" />
+				<p:menuitem value="Prova" url="/novaProva.xhtml" ajax="false" />
 			</p:submenu>
+			
+			<p:submenu label="Consulta" icon="ui-icon-search">
+				<p:menuitem value="Aluno" url="/consultaAluno.xhtml" ajax="false" />
+				<p:menuitem value="Prova" url="/consultaProva.xhtml" ajax="false" />
+			</p:submenu>
+			
 			<f:facet name="options">
 				<p:outputLabel value="Usuário Logado: "></p:outputLabel>
 				<p:outputLabel value="#{inicioBean.usuarioLogado.nome}    "></p:outputLabel>

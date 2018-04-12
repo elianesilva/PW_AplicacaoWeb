@@ -1,17 +1,17 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
 <h:head>
-	<title>Novo Aluno</title>
+	<title>Nova Prova</title>
 </h:head>
 <h:body>
 	<h:form>
-		<p:growl id="growl2" sticky="true" showDetail="true" life="3000" />
+		<p:growl id="growl3" sticky="true" showDetail="true" life="3000" />
 		<img
 			src="#{facesContext.externalContext.request.contextPath}/img/ifma.jpg.756x379_q85_box-04684346_crop.jpg"
 			height="150px" width="300px" />
@@ -42,31 +42,25 @@
 			<p:panel style="width:1100px">
 			<div align="left">
 			<h:panelGrid columns="2" cellpadding="10">
+			
+			<p:outputLabel value="Descrição: " />
+				<p:inputText value="#{provaBean.nomeBusca}" style="width: 500px"  />
+				<p:commandButton value="Consulta" ajax="false" action="#{provaBean.consultarProvaPorDescricao}" update="growl3" />
 
-				<p:outputLabel value="Nome: " />
-				<p:inputText value="#{alunoBean.novoAluno.nome}"
+				<p:outputLabel value="Descricao: " />
+				<p:inputText value="#{ProvaBean.novaProva.descricao}"
 					style="width: 500px"  />
 
-
-				<p:outputLabel value="Matricula: " />
-				<p:inputText value="#{alunoBean.novoAluno.matricula}"
-					style="width: 500px"  />
-
-				<p:outputLabel value="Data Nascimento: " />
-				<p:calendar showOn="button" value="#{alunoBean.novoAluno.dataNasc}"
+				<p:outputLabel value="Data da Realização: " />
+				<p:calendar showOn="button" value="#{ProvaBean.novaProva.dataProva}"
 					required="true" />
-
-				<p:outputLabel value="Data Matricula: " />
-				<p:calendar showOn="button"
-					value="#{alunoBean.novoAluno.dataMatricula}"  />
-
+					
 			</h:panelGrid>
 
 			<div align="center">
 				<h:panelGrid columns="2">
 
-					<p:commandButton value="Salvar" ajax="false"
-						action="#{alunoBean.salvarAluno}" update="growl2" />
+					<p:commandButton value="Salvar" ajax="false" action="#{ProvaBean.salvarProva}" update="growl3" />
 					<p:commandButton value="Cancelar" ajax="false" />
 
 				</h:panelGrid>
